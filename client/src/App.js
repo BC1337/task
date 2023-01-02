@@ -26,10 +26,19 @@ function App() {
 
 	// <{name: string, price: number, imgUrl: string }>
 	const [data, setData] = useState( {
+    checkbox:{
+      value1: "",
+      value2: "",
+    },
 		name: "",
-		price: "",
-		imgUrl: "",
-		id: "",
+		email: "",
+		eID: "",
+    enum: {
+      value1: "",
+      value2: "",
+      value3: "",
+    },
+    file: "",
 	});
 
 	const [error, setError] = useState("");
@@ -47,37 +56,57 @@ function App() {
     <h1>Home Page, Very Cool, Such Style</h1>
   <form onSubmit={handleSubmit}>
   <div class="mb-3 form-check">
-    <input type="checkbox" class="form-check-input" id="exampleCheck1" onChange={handleChange}/>
+    <input type="checkbox"
+           class="form-check-input"
+           name="value1" 
+           onChange={handleChange}/>
     <label class="form-check-label" for="exampleCheck1">Unemployed</label>
   </div>
   <div class="mb-3 form-check">
-    <input type="checkbox" class="form-check-input" id="exampleCheck1" onChange={handleChange}/>
+    <input type="checkbox"
+           class="form-check-input"
+           name="value2"
+           onChange={handleChange}/>
     <label class="form-check-label" for="exampleCheck1">Employed</label>
   </div>
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Name</label>
-    <input type="name" class="form-control" id="exampleInputName" aria-describedby="nameHelp" onChange={handleChange}/>
+    <input type="name"
+           class="form-control"
+           name="name"
+           aria-describedby="nameHelp"
+           onChange={handleChange}/>
   </div>      
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" onChange={handleChange}/>
+    <input type="email"
+           class="form-control" 
+           name="email" 
+           aria-describedby="emailHelp" 
+           onChange={handleChange}/>
     <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
   </div>
   <div class="mb-3">
     <label for="exampleInputEID" class="form-label">Employee ID</label>
-    <input type="EID" class="form-control" id="exampleInputEID" onChange={handleChange}/>
+    <input type="number"
+           class="form-control"
+           name="eID" 
+           onChange={handleChange}/>
   </div>
     {/* select */}
   <select class="form-select" aria-label="Default select example" onChange={handleChange}>
-    <option selected>Department</option>
-    <option value="1">One</option>
-    <option value="2">Two</option>
-    <option value="3">Three</option>
+    <option selected >Department</option>
+    <option value="1" >One</option>
+    <option value="2" >Two</option>
+    <option value="3" >Three</option>
   </select>
   <br></br>
   <div class="mb-3">
     <label for="formFileMultiple" class="form-label">Multiple files input example</label>
-    <input class="form-control" type="file" id="formFileMultiple" multiple onChange={handleChange}/>
+    <input class="form-control"
+           type="file"
+           name="file"
+           multiple onChange={handleChange}/>
   </div>
 
   {error && <div className={error}>{error}</div>}

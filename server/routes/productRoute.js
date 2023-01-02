@@ -8,9 +8,11 @@ const router = Router();
 router.post('/post', async function(req, res){
     const data = Model({
         id: req.body.id,
-        imgUrl: req.body.imgUrl,
         name: req.body.name,
-        price: req.body.price,
+        email: req.body.email,
+        eID: req.body.eID,
+        enum: req.body.enum,
+        file: req.body.file,
     })
     try{
         const dataToSave = await data.save();

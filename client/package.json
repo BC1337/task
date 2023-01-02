@@ -13,7 +13,7 @@
     "react-scripts": "5.0.1"
   },
   "scripts": {
-    "start": "concurrently \"npm run dev\" \"cd ../server && nodemon server\"",
+    "start": "concurrently \"react-scripts start\" \"cd ../server && nodemon server\"",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
